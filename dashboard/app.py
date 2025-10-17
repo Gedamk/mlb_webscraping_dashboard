@@ -4,14 +4,14 @@ import sqlite3
 import plotly.express as px
 
 # =====================================================
-# 🏠 Dashboard Title
+#  Dashboard Title
 # =====================================================
 st.set_page_config(page_title="MLB History Dashboard", layout="wide")
-st.title("⚾ MLB History Dashboard")
+st.title(" MLB History Dashboard")
 st.markdown("Explore team performance data scraped, cleaned, and stored in SQLite.")
 
 # =====================================================
-# 📂 Load Data
+# Load Data
 # =====================================================
 conn = sqlite3.connect("data/mlb_data.db")
 df = pd.read_sql_query("SELECT * FROM mlb_events", conn)
@@ -27,13 +27,13 @@ year = st.selectbox("Select Year:", sorted(df["Year"].unique(), reverse=True))
 filtered = df[df["Year"] == year]
 
 # =====================================================
-# 📊 Data Preview
+# Data Preview
 # =====================================================
 st.subheader(f"Team Performance for {year}")
 st.dataframe(filtered)
 
 # =====================================================
-# 📈 Visualization 1 — Bar Chart (Top Teams by Runs)
+# Visualization 1 — Bar Chart (Top Teams by Runs)
 # =====================================================
 st.subheader(f"Top 10 Teams by Runs - {year}")
 
@@ -52,7 +52,7 @@ fig_bar.update_layout(xaxis_title="Team", yaxis_title="Runs", showlegend=False)
 st.plotly_chart(fig_bar, use_container_width=True)
 
 # =====================================================
-# 📈 Visualization 2 — Line Chart (Runs Over Time)
+# Visualization 2 — Line Chart (Runs Over Time)
 # =====================================================
 st.subheader("Total Runs by Year")
 
@@ -68,7 +68,7 @@ fig_line = px.line(
 st.plotly_chart(fig_line, use_container_width=True)
 
 # =====================================================
-# 🧮 Summary Stats
+#  Summary Stats
 # =====================================================
 st.subheader("Summary Statistics")
 st.write(df.describe())

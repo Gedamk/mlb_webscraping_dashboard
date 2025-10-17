@@ -6,8 +6,10 @@ cat > README.md <<'EOF'
 **Assignment Type:** Coding Assignment + Dashboard Capstone  
 **Student:** Gedam Wondimagegn  
 **Instructor:** Conde The Dream
-**GitHub repo** URL
+**GitHub repo** https://github.com/Gedamk/mlb_webscraping_dashboard.git 
 **Deployment** 
+## 🌐 Live Dashboard
+👉 [https://mlb-webscraping-dashboard-1.onrender.com](https://mlb-webscraping-dashboard-1.onrender.com)
 
 ---
 
